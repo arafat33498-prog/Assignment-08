@@ -37,12 +37,12 @@ export default function Navbar() {
       
         <div className="navbar-end gap-2">
           <div className="hidden md:flex">
-            <Link href="/login" className="btn btn-ghost text-gray-600 font-bold hover:bg-gray-50 px-6">
+            <Link href="/auth/signin" className="btn btn-ghost text-gray-600 font-bold hover:bg-gray-50 px-6">
               Login
             </Link>
           </div>
           <Link 
-            href="/register" 
+            href="/auth/signup" 
             className="btn border-none text-white font-bold px-8 rounded-full shadow-lg hover:shadow-[#244D3F]/30 transition-all"
             style={{ backgroundColor: "#244D3F" }}
           >
