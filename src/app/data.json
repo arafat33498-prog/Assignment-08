@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "name": "Deshi Shahi Cow",
+    "type": "Cow",
+    "breed": "Local Deshi",
+    "price": 120000,
+    "weight": 280,
+    "age": 3,
+    "location": "Bogura",
+    "description": "Healthy deshi cow suitable for Qurbani. Well fed with natural food.",
+    "image": "/cow1.jpg",
+    "category": "Large Animal"
+  },
+  {
+    "id": 2,
+    "name": "Australian Bull",
+    "type": "Cow",
+    "breed": "Holstein",
+    "price": 250000,
+    "weight": 450,
+    "age": 4,
+    "location": "Dhaka",
+    "description": "Premium quality Australian breed bull for a grand Qurbani.",
+    "image": "/cow2.jpg",
+    "category": "Extra Large"
+  },
+  {
+    "id": 3,
+    "name": "Black Bengal Goat",
+    "type": "Goat",
+    "breed": "Local Bengal",
+    "price": 25000,
+    "weight": 35,
+    "age": 2,
+    "location": "Kushtia",
+    "description": "Pure black bengal goat, very healthy and active.",
+    "image": "/cow3.jpg",
+    "category": "Small Animal"
+  },
+  {
+    "id": 4,
+    "name": "Sindhi Red Cow",
+    "type": "Cow",
+    "breed": "Sindhi",
+    "price": 180000,
+    "weight": 320,
+    "age": 3,
+    "location": "Rajshahi",
+    "description": "Beautiful Sindhi red cow with great build and health.",
+    "image": "/cow4.jpg",
+    "category": "Medium Animal"
+  },
+  {
+    "id": 5,
+    "name": "Jamunapari Goat",
+    "type": "Goat",
+    "breed": "Jamunapari",
+    "price": 45000,
+    "weight": 55,
+    "age": 2,
+    "location": "Pabna",
+    "description": "High quality Jamunapari goat with long ears and heavy weight.",
+    "image": "https://i.postimg.cc/example-goat2.jpg",
+    "category": "Medium Animal"
+  },
+  {
+    "id": 6,
+    "name": "White Hill Sheep",
+    "type": "Sheep",
+    "breed": "Local Sheep",
+    "price": 30000,
+    "weight": 40,
+    "age": 1,
+    "location": "Sylhet",
+    "description": "Healthy hill sheep, perfect for a budget-friendly sacrifice.",
+    "image": "https://i.postimg.cc/example-sheep.jpg",
+    "category": "Small Animal"
+  }
+]
