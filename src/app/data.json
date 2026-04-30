@@ -61,7 +61,7 @@
     "age": 2,
     "location": "Pabna",
     "description": "High quality Jamunapari goat with long ears and heavy weight.",
-    "image": "https://i.postimg.cc/example-goat2.jpg",
+    "image": "/cow5.jpg",
     "category": "Medium Animal"
   },
   {
@@ -74,7 +74,85 @@
     "age": 1,
     "location": "Sylhet",
     "description": "Healthy hill sheep, perfect for a budget-friendly sacrifice.",
-    "image": "https://i.postimg.cc/example-sheep.jpg",
+    "image": "/cow6.jpg",
+    "category": "Small Animal"
+  },
+  {
+    "id": 7,
+    "name": "Brahman King Bull",
+    "type": "Cow",
+    "breed": "Brahman",
+    "price": 350000,
+    "weight": 520,
+    "age": 4,
+    "location": "Chittagong",
+    "description": "Massive Brahman bull with excellent muscle structure and calm nature.",
+    "image": "/cow7.jpg",
+    "category": "Extra Large"
+  },
+  {
+    "id": 8,
+    "name": "Mirkadim White Cow",
+    "type": "Cow",
+    "breed": "Mirkadim",
+    "price": 210000,
+    "weight": 310,
+    "age": 3,
+    "location": "Munshiganj",
+    "description": "Premium Mirkadim breed known for its white coat and superior meat quality.",
+    "image": "/cow8.jpg",
+    "category": "Medium Animal"
+  },
+  {
+    "id": 9,
+    "name": "Barbari Fancy Goat",
+    "type": "Goat",
+    "breed": "Barbari",
+    "price": 38000,
+    "weight": 45,
+    "age": 2,
+    "location": "Comilla",
+    "description": "Very attractive Barbari goat, known for being productive and healthy.",
+    "image": "/cow9.jpg",
+    "category": "Small Animal"
+  },
+  {
+    "id": 10,
+    "name": "Gir Bull Special",
+    "type": "Cow",
+    "breed": "Gir",
+    "price": 280000,
+    "weight": 400,
+    "age": 4,
+    "location": "Jessore",
+    "description": "Pure Gir breed bull with distinct features and heavy built.",
+    "image": "/cow10.jpg",
+    "category": "Large Animal"
+  },
+  {
+    "id": 11,
+    "name": "Beetal Goat Male",
+    "type": "Goat",
+    "breed": "Beetal",
+    "price": 55000,
+    "weight": 65,
+    "age": 3,
+    "location": "Dinajpur",
+    "description": "Large sized Beetal goat, perfect for a premium small animal sacrifice.",
+    "image": "/cow11.jpg",
+    "category": "Medium Animal"
+  },
+  {
+    "id": 12,
+    "name": "Garole Sheep",
+    "type": "Sheep",
+    "breed": "Garole",
+    "price": 22000,
+    "weight": 30,
+    "age": 2,
+    "location": "Sundarbans",
+    "description": "Local Garole sheep, very hardy and suitable for budget buyers.",
+    "image": "/sheep2.jpg",
     "category": "Small Animal"
   }
 ]
