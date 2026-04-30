@@ -2,13 +2,12 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import animalsData from "../data.json"; // আপনার তৈরি করা JSON ডাটা
-
+import animalsData from "../data.json"; 
 const AllAnimalsPage = () => {
   const [animals, setAnimals] = useState(animalsData);
   const [sortOrder, setSortOrder] = useState("");
 
-  // সর্টিং লজিক
+ 
   const handleSort = (order) => {
     setSortOrder(order);
     const sortedData = [...animals].sort((a, b) => {
@@ -23,7 +22,7 @@ const AllAnimalsPage = () => {
     <section className="py-12 bg-gray-50 min-h-screen font-[family-name:var(--font-geist-sans)]">
       <div className="max-w-7xl mx-auto px-4">
         
-        {/* পেজ হেডার ও সর্টিং ড্রপডাউন */}
+       
         <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
           <div>
             <h1 className="text-4xl font-bold text-[#2D231D]">All Livestock</h1>
@@ -44,11 +43,11 @@ const AllAnimalsPage = () => {
           </div>
         </div>
 
-        {/* এনিম্যাল কার্ড গ্রিড - এখানে সব পশু দেখাবে */}
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {animals.map((pet) => (
             <div key={pet.id} className="card bg-white shadow-sm hover:shadow-2xl transition-all duration-300 rounded-[40px] overflow-hidden border border-gray-100 group">
-              {/* ইমেজ সেকশন */}
+             
               <figure className="relative h-72 w-full overflow-hidden">
                 <Image
                   src={pet.image}
@@ -61,7 +60,7 @@ const AllAnimalsPage = () => {
                 </div>
               </figure>
 
-              {/* কন্টেন্ট সেকশন */}
+              
               <div className="card-body p-8">
                 <div className="flex justify-between items-start mb-2">
                   <h2 className="card-title text-2xl font-bold text-[#2D231D]">{pet.name}</h2>

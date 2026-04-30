@@ -140,10 +140,6 @@ export default function HeroAndStats() {
             ))}
           </div>
         </div>
-
-        <section>
-        <Footer></Footer>
-      </section>
       </section>
 
       
