@@ -142,9 +142,9 @@ export default function HeroAndStats() {
           </div>
         </div>
       </section>
-            <section>
+            {/* <section>
                 <Footer></Footer>
-            </section>
+            </section> */}
       
     </>
   );
