@@ -26,11 +26,11 @@ export const metadata = {
   openGraph: {
     title: "QurbaniHat - অনলাইন পশু হাট",
     description: "সেরা মানের কোরবানি পশু এবং প্রয়োজনীয় টিপস পেতে আমাদের ভিজিট করুন।",
-    url: "https://assignment-08-sooty-phi.vercel.app", 
+    url: "https://qurbanice-hat.vercel.app", 
     siteName: "QurbaniHat",
     images: [
       {
-        url: "https://assignment-08-sooty-phi.vercel.app/logo.png", 
+        url: "https://qurbanice-hat.vercel.app/logo.png", 
         width: 1200,
         height: 630,
         alt: "QurbaniHat Preview Image",
