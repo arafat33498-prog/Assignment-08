@@ -11,13 +11,13 @@ const SignUpPage = () => {
         const formData = new FormData(e.currentTarget);
         const userData = Object.fromEntries(formData.entries());
         
-        const { data, error } = await authClient.signUp.email({
-            name: userData.name,
-            email: userData.email,
-            password: userData.password,
-            image: userData.photoUrl,
-            callbackURL: '/auth/signin'
-        });
+      const { data, error } = await authClient.signUp.email({
+    name: userData.name,
+    email: userData.email,
+    password: userData.password,
+    image: userData.photoUrl || userData.image || "", 
+    callbackURL: '/home' 
+});
 
         if (error) {
             toast.error(error.message || "Registration failed!");
