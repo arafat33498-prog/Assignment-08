@@ -1,21 +1,29 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { authClient } from "@/lib/auth-client"; // Better-Auth ক্লায়েন্ট
-import { useRouter } from "next/navigation";
+import { authClient } from "@/lib/auth-client"; 
+import { useRouter, usePathname } from "next/navigation"; // usePathname add kora hoyeche
 
 export default function Navbar() {
   const { data: session, isPending } = authClient.useSession();
   const router = useRouter();
+  const pathname = usePathname(); // Current URL track korbe
 
   const handleLogout = async () => {
     await authClient.signOut({
       fetchOptions: {
         onSuccess: () => {
-          router.push("/auth/signin"); // লগআউট হলে লগইন পেজে নিয়ে যাবে
+          router.push("/auth/signin");
         },
       },
     });
+  };
+
+  // Active link-er style logic
+  const getLinkStyle = (path) => {
+    return pathname === path 
+      ? "text-[#244D3F] font-bold border-b-2 border-[#244D3F] pb-1" // Active thakle ei style
+      : "text-gray-600 font-semibold hover:text-[#244D3F] transition-all"; // Normal style
   };
 
   return (
@@ -36,12 +44,12 @@ export default function Navbar() {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 gap-8">
             <li>
-              <Link href="/home" className="text-gray-600 font-semibold hover:text-[#244D3F] transition-colors">
+              <Link href="/home" className={getLinkStyle("/home")}>
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/animals" className="text-gray-600 font-semibold hover:text-[#244D3F] transition-colors">
+              <Link href="/animals" className={getLinkStyle("/animals")}>
                 All Animals
               </Link>
             </li>
@@ -52,7 +60,6 @@ export default function Navbar() {
           {isPending ? (
             <span className="loading loading-spinner loading-sm"></span>
           ) : session ? (
-            /* লগইন থাকলে যা দেখাবে */
             <div className="flex items-center gap-4">
               <div className="dropdown dropdown-end">
                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar border-2 border-[#244D3F]/20">
@@ -67,7 +74,11 @@ export default function Navbar() {
                   <li className="px-4 py-2 font-bold text-gray-800 border-b border-gray-50 mb-1">
                     {session.user.name}
                   </li>
-                  <li><Link href="/my-profile">My Profile</Link></li>
+                  <li>
+                    <Link href="/my-profile" className={pathname === "/my-profile" ? "text-[#244D3F] font-bold" : ""}>
+                      My Profile
+                    </Link>
+                  </li>
                   <li className="text-red-500">
                     <button onClick={handleLogout}>Logout</button>
                   </li>
@@ -75,7 +86,6 @@ export default function Navbar() {
               </div>
             </div>
           ) : (
-            /* লগইন না থাকলে যা দেখাবে */
             <>
               <div className="hidden md:flex">
                 <Link href="/auth/signin" className="btn btn-ghost text-gray-600 font-bold hover:bg-gray-50 px-6">

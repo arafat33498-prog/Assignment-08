@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import FeaturedAnimals from "@/component/FeaturedAnimals";
 import QurbaniTips from "@/component/QurbaniTips";
-import Footer from "@/component/Footer";
+
 
 export default function HeroAndStats() {
   const animalImages = [
@@ -35,10 +35,10 @@ export default function HeroAndStats() {
 
   return (
     <>
-      {/* --- HERO SECTION --- */}
+      
       <section className="bg-white pt-20 pb-10 overflow-hidden font-[family-name:var(--font-geist-sans)]">
         <div className="max-w-7xl mx-auto px-4 text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-bold text-[#2D231D] mb-6 tracking-tight leading-[1.1]">
+          <h1 className="text-5xl md:text-7xl font-bold text-[#244D3F] mb-6 tracking-tight leading-[1.1]">
             Every Animal Deserves <br /> a Loving Home
           </h1>
           <p className="max-w-2xl mx-auto text-gray-500 text-lg md:text-xl mb-12 leading-relaxed font-medium">
@@ -46,11 +46,11 @@ export default function HeroAndStats() {
             give every furry friend the second chance they deserve.
           </p>
 
-          {/* Buttons */}
+          
           <div className="flex flex-wrap justify-center gap-4">
             <Link 
               href="/animals" 
-              className="btn btn-lg bg-[#B68C59] border-none text-white rounded-full px-10 h-16 text-lg hover:bg-[#a07b4e] shadow-md flex items-center gap-2 group"
+              className="btn btn-lg bg-[#244D3F] border-none text-white rounded-full px-10 h-16 text-lg hover:bg-[#244D3F] shadow-md flex items-center gap-2 group"
             >
               MEET OUR PETS 
               <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
@@ -69,7 +69,7 @@ export default function HeroAndStats() {
           </div>
         </div>
 
-        {/* Image Marquee */}
+        
         <div className="w-full">
           <Marquee speed={45} gradient={false} pauseOnHover={true}>
             {animalImages.map((img, index) => (
@@ -98,42 +98,42 @@ export default function HeroAndStats() {
         <QurbaniTips></QurbaniTips>
       </section>
 
-      {/* --- STATISTICS SECTION (Your New Image-based Requirement) --- */}
+     
       <section className="px-4 py-16 bg-white font-[family-name:var(--font-geist-sans)]">
-        <div className="max-w-7xl mx-auto bg-[#F9F7F4] rounded-[40px] p-8 md:p-16 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto bg-[#204a3b] rounded-[40px] p-8 md:p-16 relative overflow-hidden">
           
           <div className="flex flex-col md:flex-row justify-between items-start mb-16 gap-8">
             <div className="max-w-2xl text-left">
-              <h2 className="text-3xl md:text-5xl font-bold text-[#2D231D] mb-6 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-[#ffffff] mb-6 leading-tight">
                 Giving Every Animal the Life <br /> They Deserve
               </h2>
-              <p className="text-gray-600 text-lg">
+              <p className="text-[#ffffff] text-lg">
                 QurbaniHat is a platform dedicated to providing healthy livestock 
                 and ensuring every animal gets proper care and a safe home.
               </p>
             </div>
             
-            {/* Custom Logo/Icon on the right */}
+           
             <div className="hidden md:block">
-              <div className="w-20 h-20 border-2 border-[#B68C59] rounded-full flex items-center justify-center p-4">
-                 <svg viewBox="0 0 24 24" fill="none" className="text-[#B68C59] w-full h-full" stroke="currentColor" strokeWidth="1.5">
+              <div className="w-20 h-20 border-2 border-[#ffffff] rounded-full flex items-center justify-center p-4">
+                 <svg viewBox="0 0 24 24" fill="none" className="text-[#ffffff] w-full h-full" stroke="currentColor" strokeWidth="1.5">
                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                  </svg>
               </div>
             </div>
           </div>
 
-          {/* Stats Grid */}
+         
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pt-12 border-t border-gray-200 text-left">
             {stats.map((stat, index) => (
               <div key={index} className="space-y-4">
-                <h3 className="text-5xl font-bold text-[#2D231D]">
+                <h3 className="text-5xl font-bold text-[#ffffff]">
                   {stat.number}
                 </h3>
-                <p className="text-sm font-bold tracking-widest text-gray-500 uppercase">
+                <p className="text-sm font-bold tracking-widest text-[#d3d1d1] uppercase">
                   {stat.label}
                 </p>
-                <p className="text-gray-500 leading-relaxed text-sm md:text-base">
+                <p className="text-[#d3d1d1] leading-relaxed text-sm md:text-base">
                   {stat.description}
                 </p>
               </div>

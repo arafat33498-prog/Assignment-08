@@ -25,7 +25,7 @@ const tips = [
 
 const QurbaniTips = () => {
     return (
-        <section className="py-20 bg-[#F9F6F2] font-[family-name:var(--font-geist-sans)]">
+        <section className="py-20 bg-[#07b2790f] font-[family-name:var(--font-geist-sans)]">
             <div className="max-w-7xl mx-auto px-4 text-center">
                 <h2 className="text-4xl font-bold text-[#2D231D] mb-4">Qurbani Preparation Tips</h2>
                 <p className="text-gray-600 mb-12 max-w-2xl mx-auto">

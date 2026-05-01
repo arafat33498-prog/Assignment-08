@@ -2,12 +2,10 @@
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-
-
+import toast, { Toaster } from "react-hot-toast"; // Assignment Requirement: Toast
 import animalsData from "../../data.json"; 
 
 const AnimalDetails = ({ params }) => {
-    
     const unwrappedParams = React.use(params);
     const id = unwrappedParams.id;
 
@@ -15,14 +13,14 @@ const AnimalDetails = ({ params }) => {
     const router = useRouter();
     const [animal, setAnimal] = useState(null);
 
-   
+    // 1. Solid Private Route Logic
     useEffect(() => {
         if (!isPending && !session) {
             router.push("/auth/signin"); 
         }
     }, [session, isPending, router]);
 
-    
+    // 2. Load Animal Data
     useEffect(() => {
         if (id) {
             const found = animalsData.find(a => a.id === parseInt(id));
@@ -30,13 +28,23 @@ const AnimalDetails = ({ params }) => {
         }
     }, [id]);
 
+    // 3. Handle Booking with Toast & Reset
     const handleBooking = (e) => {
         e.preventDefault();
-        alert("Success! Your booking has been placed."); 
+        // Success Toast showing
+        toast.success("Success! Your livestock booking has been placed.", {
+            duration: 4000,
+            position: 'top-center',
+            style: {
+                borderRadius: '10px',
+                background: '#333',
+                color: '#fff',
+            },
+        }); 
         e.target.reset();
     };
 
-  
+    // 4. Loading State (Assignment Requirement)[cite: 10]
     if (isPending) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-white">
@@ -51,9 +59,10 @@ const AnimalDetails = ({ params }) => {
 
     return (
         <div className="min-h-screen bg-slate-50 py-12 px-4 font-sans">
+            <Toaster /> {/* Toast Container */}
             <div className="max-w-6xl mx-auto bg-white rounded-[2.5rem] shadow-sm border border-slate-100 overflow-hidden flex flex-col md:flex-row">
                 
-           
+                {/* Image Section */}
                 <div className="md:w-1/2 h-[450px] md:h-auto relative">
                     <img 
                         src={animal.image} 
@@ -65,7 +74,7 @@ const AnimalDetails = ({ params }) => {
                     </div>
                 </div>
 
-               
+                {/* Content Section */}
                 <div className="md:w-1/2 p-8 md:p-12 lg:p-16">
                     <h1 className="text-4xl font-extrabold text-slate-800 mb-3 tracking-tight">{animal.name}</h1>
                     <p className="text-blue-600 font-black text-3xl mb-8">৳ {animal.price.toLocaleString()}</p>
@@ -88,14 +97,17 @@ const AnimalDetails = ({ params }) => {
 
                     <div className="h-[1px] bg-slate-100 mb-10"></div>
 
-                  
+                    
                     <form onSubmit={handleBooking} className="flex flex-col gap-5">
                         <h3 className="text-xl font-bold text-slate-800 mb-2 font-sans">Livestock Booking</h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <input required type="text" placeholder="Full Name" className="p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-50 transition-all" />
-                            <input required type="tel" placeholder="Phone Number" className="p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-50 transition-all" />
+                            <input required type="email" placeholder="Email Address" className="p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-50 transition-all" />
                         </div>
-                        <input required type="text" placeholder="Delivery Address" className="p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-50 transition-all" />
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input required type="tel" placeholder="Phone Number" className="p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-50 transition-all" />
+                            <input required type="text" placeholder="Delivery Address" className="p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-50 transition-all" />
+                        </div>
                         
                         <button type="submit" className="w-full py-5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl shadow-xl shadow-blue-100 active:scale-[0.98] transition-all duration-200 mt-2">
                             Confirm Booking
