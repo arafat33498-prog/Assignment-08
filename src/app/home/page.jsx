@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import FeaturedAnimals from "@/component/FeaturedAnimals";
 import QurbaniTips from "@/component/QurbaniTips";
-import Footer from "@/component/Footer";
 
 
 export default function HeroAndStats() {
@@ -142,9 +141,7 @@ export default function HeroAndStats() {
           </div>
         </div>
       </section>
-            {/* <section>
-                <Footer></Footer>
-            </section> */}
+            
       
     </>
   );

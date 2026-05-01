@@ -29,7 +29,7 @@ export default function Navbar() {
     <div className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100 font-sans">
       <div className="navbar max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20">
         
-        {/* Logo Section */}
+       
         <div className="navbar-start">
           <Link href="/" className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-xl bg-[#244D3F] flex items-center justify-center shadow-lg shadow-[#244D3F]/20">
@@ -41,7 +41,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Desktop Menu */}
+        
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 gap-8">
             <li><Link href="/home" className={getLinkStyle("/home")}>Home</Link></li>
@@ -49,7 +49,7 @@ export default function Navbar() {
           </ul>
         </div>
 
-        {/* End Section (Profile/Buttons) */}
+      
         <div className="navbar-end gap-3">
           {isPending ? (
             <span className="loading loading-spinner loading-sm"></span>
@@ -68,12 +68,12 @@ export default function Navbar() {
                   </div>
                 </div>
                 <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow-2xl menu menu-sm dropdown-content bg-white rounded-2xl w-52 border border-gray-100">
-                  {/* ইউজার নাম - একটু বেশি গাঢ় করা হয়েছে */}
+                
                   <li className="px-4 py-3 font-black text-slate-900 border-b border-gray-100 mb-1">
                     {session.user.name}
                   </li>
                   
-                  {/* My Profile - এখানে কালার ফিক্স করা হয়েছে */}
+                 
                   <li>
                     <Link 
                       href="/my-profile" 
@@ -83,7 +83,7 @@ export default function Navbar() {
                     </Link>
                   </li>
                   
-                  {/* Logout - লাল রঙটি আরও স্পষ্ট করা হয়েছে */}
+                 
                   <li className="mt-1">
                     <button 
                       onClick={handleLogout}

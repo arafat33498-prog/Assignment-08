@@ -1,4 +1,5 @@
 'use client'
+import toast from "react-hot-toast";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
@@ -31,7 +32,7 @@ const UpdateProfile = () => {
             if (error) {
                 alert("Update failed: " + error.message);
             } else {
-                alert("Success! Your information has been updated.");
+                toast.success("Success! Your information has been updated.");
                 router.push("/my-profile"); 
                 router.refresh(); 
             }

@@ -13,14 +13,14 @@ const AnimalDetails = ({ params }) => {
     const router = useRouter();
     const [animal, setAnimal] = useState(null);
 
-    // ১. প্রাইভেট রাউট লজিক (অ্যাসাইনমেন্ট রিকোয়ারমেন্ট)
+    
     useEffect(() => {
         if (!isPending && !session) {
             router.push("/auth/signin"); 
         }
     }, [session, isPending, router]);
 
-    // ২. লোকাল JSON থেকে ডাটা লোড করা
+    
     useEffect(() => {
         if (id) {
             const found = animalsData.find(a => a.id === parseInt(id));
@@ -28,7 +28,7 @@ const AnimalDetails = ({ params }) => {
         }
     }, [id]);
 
-    // ৩. বুকিং হ্যান্ডলার - সাকসেস টোস্ট এবং ফর্ম রিসেট
+    
     const handleBooking = (e) => {
         e.preventDefault();
         toast.success("Success! Your livestock booking has been placed.", {
@@ -40,10 +40,10 @@ const AnimalDetails = ({ params }) => {
                 color: '#fff',
             },
         }); 
-        e.target.reset(); // ফর্ম ক্লিয়ার করবে
+        e.target.reset(); 
     };
 
-    // ৪. লোডিং স্টেট (অ্যাসাইনমেন্ট রিকোয়ারমেন্ট)
+    
     if (isPending) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-white">
@@ -58,10 +58,10 @@ const AnimalDetails = ({ params }) => {
 
     return (
         <div className="min-h-screen bg-slate-50 py-12 px-4 font-sans">
-            <Toaster /> {/* টোস্ট কন্টেইনার */}
+            <Toaster /> 
             <div className="max-w-6xl mx-auto bg-white rounded-[2.5rem] shadow-sm border border-slate-100 overflow-hidden flex flex-col md:flex-row">
                 
-                {/* ইমেজ সেকশন */}
+                
                 <div className="md:w-1/2 h-[450px] md:h-auto relative">
                     <img 
                         src={animal.image} 
@@ -73,7 +73,7 @@ const AnimalDetails = ({ params }) => {
                     </div>
                 </div>
 
-                {/* কন্টেন্ট সেকশন */}
+               
                 <div className="md:w-1/2 p-8 md:p-12 lg:p-16">
                     <h1 className="text-4xl font-extrabold text-slate-800 mb-3 tracking-tight">{animal.name}</h1>
                     <p className="text-[#244D3F] font-black text-3xl mb-8">৳ {animal.price.toLocaleString()}</p>
@@ -96,12 +96,12 @@ const AnimalDetails = ({ params }) => {
 
                     <div className="h-[1px] bg-slate-100 mb-10"></div>
 
-                    {/* বুকিং ফর্ম */}
+                  
                     <form onSubmit={handleBooking} className="flex flex-col gap-5">
                         <h3 className="text-xl font-bold text-slate-800 mb-2 font-sans">Livestock Booking</h3>
                         
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            {/* ইনপুট বর্ডার এবং টেক্সট কালার আরও ক্লিয়ার করা হয়েছে */}
+                            
                             <input required type="text" placeholder="Full Name" 
                                 className="w-full p-4 bg-white border border-slate-400 rounded-2xl outline-none focus:border-[#244D3F] focus:ring-4 focus:ring-[#244D3F]/10 transition-all text-slate-800 placeholder:text-slate-400 font-sans" />
                             

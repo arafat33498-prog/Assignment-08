@@ -6,7 +6,7 @@ const client = new MongoClient(process.env.AUTH_DB_URL);
 const db = client.db("better-auth-db");
 
 export const auth = betterAuth({
-    // Live site-e redirection thikmoto kaj korar jonno eita baddhotamulok
+    
     baseURL: process.env.BETTER_AUTH_URL, 
     secret: process.env.BETTER_AUTH_SECRET,
 
@@ -25,7 +25,7 @@ export const auth = betterAuth({
         client
     }),
 
-    // Challenge-er jonno user update feature enable korte hobe
+    
     user: {
         changeEmail: {
             enabled: true,

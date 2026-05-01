@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
-          {/* About Section */}
+         
           <div>
             <h2 className="text-2xl font-bold mb-4">
               Qurbani<span className="text-gray-300">Hat</span>
@@ -18,7 +18,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
+          
           <div>
             <h3 className="text-lg font-bold mb-4 border-b-2 border-white/20 pb-2 w-fit">Quick Links</h3>
             <ul className="space-y-2">
@@ -29,7 +29,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
+        
           <div>
             <h3 className="text-lg font-bold mb-4 border-b-2 border-white/20 pb-2 w-fit">Contact Us</h3>
             <ul className="space-y-3 text-gray-300">
@@ -45,7 +45,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Social Links */}
+          
           <div>
             <h3 className="text-lg font-bold mb-4 border-b-2 border-white/20 pb-2 w-fit">Follow Us</h3>
             <div className="flex gap-4">
