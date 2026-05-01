@@ -5,7 +5,6 @@ import { authClient } from "@/lib/auth-client";
 import { useRouter, usePathname } from "next/navigation"; 
 
 export default function Navbar() {
-  
   const { data: session, isPending } = authClient.useSession();
   const router = useRouter();
   const pathname = usePathname(); 
@@ -14,7 +13,6 @@ export default function Navbar() {
     await authClient.signOut({
       fetchOptions: {
         onSuccess: () => {
-          
           window.location.href = "/auth/signin";
         },
       },
@@ -28,7 +26,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+    <div className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100 font-sans">
       <div className="navbar max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20">
         
         {/* Logo Section */}
@@ -62,7 +60,6 @@ export default function Navbar() {
                   <div className="w-10 rounded-full bg-gray-200">
                     <img 
                       alt="User Avatar" 
-                      // সেশন থেকে ইমেজ নিচ্ছে
                       src={session.user.image || "https://cdn-icons-png.flaticon.com/512/149/149071.png"} 
                       onError={(e) => {
                         e.target.src = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
@@ -70,13 +67,30 @@ export default function Navbar() {
                     />
                   </div>
                 </div>
-                <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow-xl menu menu-sm dropdown-content bg-white rounded-2xl w-52 border border-gray-100">
-                  <li className="px-4 py-2 font-bold text-gray-800 border-b border-gray-50 mb-1">
+                <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow-2xl menu menu-sm dropdown-content bg-white rounded-2xl w-52 border border-gray-100">
+                  {/* ইউজার নাম - একটু বেশি গাঢ় করা হয়েছে */}
+                  <li className="px-4 py-3 font-black text-slate-900 border-b border-gray-100 mb-1">
                     {session.user.name}
                   </li>
-                  <li><Link href="/my-profile">My Profile</Link></li>
-                  <li className="text-red-500 font-bold">
-                    <button onClick={handleLogout}>Logout</button>
+                  
+                  {/* My Profile - এখানে কালার ফিক্স করা হয়েছে */}
+                  <li>
+                    <Link 
+                      href="/my-profile" 
+                      className="text-slate-900 font-bold py-3 hover:text-[#244D3F] hover:bg-slate-50 transition-all active:bg-slate-100"
+                    >
+                      My Profile
+                    </Link>
+                  </li>
+                  
+                  {/* Logout - লাল রঙটি আরও স্পষ্ট করা হয়েছে */}
+                  <li className="mt-1">
+                    <button 
+                      onClick={handleLogout}
+                      className="text-red-600 font-bold py-3 hover:bg-red-50 transition-all"
+                    >
+                      Logout Account
+                    </button>
                   </li>
                 </ul>
               </div>
