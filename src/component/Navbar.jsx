@@ -22,8 +22,8 @@ export default function Navbar() {
   // Active link-er style logic
   const getLinkStyle = (path) => {
     return pathname === path 
-      ? "text-[#244D3F] font-bold border-b-2 border-[#244D3F] pb-1" // Active thakle ei style
-      : "text-gray-600 font-semibold hover:text-[#244D3F] transition-all"; // Normal style
+      ? "text-[#244D3F] font-bold border-b-2 border-[#244D3F] pb-1" 
+      : "text-gray-600 font-semibold hover:text-[#244D3F] transition-all"; 
   };
 
   return (
