@@ -28,11 +28,11 @@ const QurbaniTips = () => {
         <section className="py-20 bg-[#f0f9f6] dark:bg-[#f0f9f6] font-sans">
             <div className="max-w-7xl mx-auto px-4 text-center">
                
-                <h2 className="text-4xl font-black text-slate-900 dark:text-slate-900 mb-4 tracking-tight">
+                <h2 className="text-4xl font-black text-[#49a989fa] dark:text-slate-900 mb-4 tracking-tight">
                     Qurbani Preparation Tips
                 </h2>
-                <p className="text-slate-600 dark:text-slate-600 mb-12 max-w-2xl mx-auto font-bold">
-                   
+                <p className="text-[#000000fa] dark:text-slate-600 mb-12 max-w-2xl mx-auto font-bold">
+                   সঠিক নিয়মে পশু নির্বাচন এবং যত্নের মাধ্যমে আপনার কোরবানিকে করুন আরও আনন্দময়।
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
