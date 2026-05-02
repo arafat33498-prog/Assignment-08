@@ -42,8 +42,8 @@ export default function HeroAndStats() {
             Every Animal Deserves <br /> a Loving Home
           </h1>
           <p className="max-w-2xl mx-auto text-gray-500 text-lg md:text-xl mb-12 leading-relaxed font-medium">
-            We rescue, rehabilitate, and rehome animals in need. Join our mission to <br className="hidden md:block" /> 
-            give every furry friend the second chance they deserve.
+            Discover the finest livestock for your Qurbani. We ensure healthy animals and a <br className="hidden md:block" /> 
+            seamless booking experience for you and your family.
           </p>
 
           
@@ -52,7 +52,7 @@ export default function HeroAndStats() {
               href="/animals" 
               className="btn btn-lg bg-[#244D3F] border-none text-white rounded-full px-10 h-16 text-lg hover:bg-[#244D3F] shadow-md flex items-center gap-2 group"
             >
-              MEET OUR PETS 
+              MEET OUR ANIMALS 
               <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
               </div>
