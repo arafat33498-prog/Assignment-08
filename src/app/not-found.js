@@ -4,7 +4,7 @@ export default function NotFound() {
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-white px-6">
             
-            <span className="px-3 py-1 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-full">
+            <span className="px-3 py-1 text-sm font-medium text-[#244D3F] bg-indigo-50 rounded-full">
                 404
             </span>
 
@@ -22,7 +22,7 @@ export default function NotFound() {
             <div className="mt-10 flex items-center gap-x-6">
                 <Link
                     href="/"
-                    className="flex items-center gap-2 rounded-md bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-all"
+                    className="flex items-center gap-2 rounded-md bg-[#244D3F] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-all"
                 >
                     Back to homepage
                     <span>→</span>
