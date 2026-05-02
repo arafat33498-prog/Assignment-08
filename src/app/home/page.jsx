@@ -42,7 +42,7 @@ export default function HeroAndStats() {
             Every Animal Deserves <br /> a Loving Home
           </h1>
           <p className="max-w-2xl mx-auto text-gray-500 text-lg md:text-xl mb-12 leading-relaxed font-medium">
-            Discover the finest livestock for your Qurbani. We ensure healthy animals and a <br className="hidden md:block" /> 
+            Discover the finest livestock for your Qurbani. <br /> We ensure healthy animals and a <br className="hidden md:block" /> 
             seamless booking experience for you and your family.
           </p>
 
