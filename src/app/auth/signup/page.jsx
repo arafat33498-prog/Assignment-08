@@ -11,13 +11,14 @@ const SignUpPage = () => {
         const formData = new FormData(e.currentTarget);
         const userData = Object.fromEntries(formData.entries());
         
-      const { data, error } = await authClient.signUp.email({
-    name: userData.name,
-    email: userData.email,
-    password: userData.password,
-    image: userData.photoUrl || userData.image || "", 
-    callbackURL: '/home' 
-});
+        const { data, error } = await authClient.signUp.email({
+            name: userData.name,
+            email: userData.email,
+            password: userData.password,
+            image: userData.photoUrl || "", 
+            
+            callbackURL: '/auth/signin' 
+        });
 
         if (error) {
             toast.error(error.message || "Registration failed!");
@@ -29,13 +30,12 @@ const SignUpPage = () => {
         }
     };
 
-    
     const handleGoogleLogin = async () => {
-       const data = await authClient.signIn.social({
-    provider: "google",
-    callbackURL: '/auth/signin'
-  });
-  console.log(data, "data")
+       
+        await authClient.signIn.social({
+            provider: "google",
+            callbackURL: "/" 
+        });
     };
 
     return (
@@ -47,22 +47,22 @@ const SignUpPage = () => {
                 <form className="flex flex-col gap-5" onSubmit={onSubmit}>
                     <div className="flex flex-col gap-2">
                         <label className="text-sm font-semibold text-slate-700 ml-1 text-left">Full Name</label>
-                        <input required name="name" type="text" placeholder="Your Name" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 outline-none" />
+                        <input required name="name" type="text" placeholder="Your Name" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 outline-none text-black" />
                     </div>
 
                     <div className="flex flex-col gap-2">
                         <label className="text-sm font-semibold text-slate-700 ml-1 text-left">Email Address</label>
-                        <input required name="email" type="email" placeholder="email@example.com" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 outline-none" />
+                        <input required name="email" type="email" placeholder="email@example.com" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 outline-none text-black" />
                     </div>
 
                     <div className="flex flex-col gap-2">
                         <label className="text-sm font-semibold text-slate-700 ml-1 text-left">Photo URL</label>
-                        <input required name="photoUrl" type="url" placeholder="https://image-link.com" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 outline-none" />
+                        <input required name="photoUrl" type="url" placeholder="https://image-link.com" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 outline-none text-black" />
                     </div>
 
                     <div className="flex flex-col gap-2">
                         <label className="text-sm font-semibold text-slate-700 ml-1 text-left">Password</label>
-                        <input required name="password" type="password" placeholder="••••••••" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 outline-none" />
+                        <input required name="password" type="password" placeholder="••••••••" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 outline-none text-black" />
                     </div>
 
                     <button type="submit" className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg mt-4 transition-all">
@@ -73,13 +73,13 @@ const SignUpPage = () => {
                 <div className="mt-6">
                     <div className="flex items-center gap-4 mb-6">
                         <div className="h-[1px] flex-1 bg-slate-100"></div>
-                        <span className="text-slate-300 text-[10px] uppercase font-bold tracking-widest">Or Register With</span>
+                        <span className="text-slate-400 text-[10px] uppercase font-bold tracking-widest">Or Register With</span>
                         <div className="h-[1px] flex-1 bg-slate-100"></div>
                     </div>
                     
                     <button 
                         onClick={handleGoogleLogin}
-                        className="w-full py-3 flex items-center justify-center gap-3 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 transition-all"
+                        className="w-full py-3 flex items-center justify-center gap-3 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 transition-all shadow-sm"
                     >
                         <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" className="w-5 h-5" alt="google" />
                         Continue with Google
