@@ -29,10 +29,6 @@
 - **Notifications**: React Hot Toast
 - **Animations**:  Lottie-React / Animate.css
 
-## 💻 How to Run Locally
-১. রিপোজিটরি ক্লোন করুন।
-২. `npm install` দিয়ে প্যাকেজগুলো ইন্সটল করুন।
-৩. আপনার `.env` ফাইলে Better-Auth এবং Database এর প্রয়োজনীয় কী (Key) গুলো সেট করুন।
-৪. `npm run dev` কমান্ড দিয়ে লোকাল সার্ভার চালু করুন।
+
 
 ## 👤 Developer
